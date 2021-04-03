@@ -1,0 +1,16 @@
+spring:
+  profiles:
+    active: jdbc
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://192.168.77.48:5432/fah
+    username: jim
+    password: pass
+  cloud:
+    config:
+      server:
+        jdbc:
+          sql: SELECT PROP_KEY, VALUE from PROPERTIES where APPLICATION=? and PROFILE=? and LABEL=?
+          order: 1
+server:
+  port: 9050
