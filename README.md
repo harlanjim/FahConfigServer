@@ -3,8 +3,8 @@
 http://localhost:9050/latest/application-profile.yaml
 This will return the properties in the database.
 
-
- sudo docker build --build-arg JAR_FILE=./ -t springio/fah-config-server-docker .
+docker build -t fahenterprises/fah-config-server .
+docker run -d --restart=unless-stopped -p 9050:9050 fahenterprises/fah-config-server
  
  ./mvnw clean spring-boot:build-image -DskipTests
  
